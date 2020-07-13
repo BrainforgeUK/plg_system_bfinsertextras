@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.5" method="upgrade" group="system">
+	<name>System - Plugin to insert extra items into webpage by BrainforgeUK</name>
+	<creationDate>July 2020</creationDate>
+	<version>1.0.0</version>
+	<author>Jonathan Brain</author>
+	<authorEmail>brainforge.uk@btinternet.com</authorEmail>
+	<authorUrl>https://www.brainforge.co.uk</authorUrl>
+	<copyright>Copyright (C) 2020 Jonathan Brain - All rights reserved.
+	</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>PLG_SYSTEM_BFINSERTEXTRAS_XML_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="bfinsertextras">bfinsertextras.php</filename>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields
+				name="params"
+		>
+			<fieldset
+					name="basic">
+				<field
+						name="extras"
+						type="subform"
+						label="PLG_BFINSERTEXTRAS_EXTRAS_LABEL"
+						multiple="true"
+						min="1"
+				>
+					<form>
+						<field name="purpose"
+							   type="text"
+							   required="true"
+							   label="PLG_BFINSERTEXTRAS_PURPOSE_LABEL"
+							   description="PLG_BFINSERTEXTRAS_PURPOSE_DESC"
+							   hint="PLG_BFINSERTEXTRAS_PURPOSE_HINT"
+							   class="input-xxlarge"
+						/>
+						<field name="location"
+							   type="list"
+							   required="true"
+							   default="endbody"
+							   label="PLG_BFINSERTEXTRAS_LOCATION_LABEL"
+							   description="PLG_BFINSERTEXTRAS_LOCATION_DESC"
+						>
+							<option value="endbody">PLG_BFINSERTEXTRAS_LOCATION_ENDBODY_OPTION</option>
+						</field>
+						<field name="extracode"
+							   type="textarea"
+							   required="true"
+							   label="PLG_BFINSERTEXTRAS_EXTRACODE_LABEL"
+							   description="PLG_BFINSERTEXTRAS_EXTRACODE_DESC"
+							   hint="PLG_BFINSERTEXTRAS_EXTRACODE_HINT"
+							   class="input-xxlarge"
+							   filter="raw"
+						/>
+					</form>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+
+	<updateservers>
+		<server type="extension" priority="1" name="PLG_BF_SYSTEM_BFINSERTEXTRAS">
+			https://brainforge.co.uk/component/bfupdater?element=plg_system_bfinsertextras.xml
+		</server>
+	</updateservers>
+</extension>
