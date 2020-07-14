@@ -38,6 +38,25 @@
 							   hint="PLG_BFINSERTEXTRAS_PURPOSE_HINT"
 							   class="input-xxlarge"
 						/>
+						<field
+								name="access"
+								type="accesslevel"
+								multiple="true"
+								label="JFIELD_ACCESS_LABEL"
+								description="JFIELD_ACCESS_DESC"
+						/>
+						<field
+								name="status"
+								type="radio"
+								class="btn-group"
+								label="JSTATUS"
+								default="1"
+								description="JFIELD_PUBLISHED_DESC"
+								showon="access!:"
+						>
+							<option value="0">JDISABLED</option>
+							<option value="1">JENABLED</option>
+						</field>
 						<field name="location"
 							   type="list"
 							   required="true"
@@ -54,7 +73,6 @@
 							   description="PLG_BFINSERTEXTRAS_EXTRACODE_DESC"
 							   hint="PLG_BFINSERTEXTRAS_EXTRACODE_HINT"
 							   class="input-xxlarge"
-							   filter="raw"
 						/>
 					</form>
 				</field>

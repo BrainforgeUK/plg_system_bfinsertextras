@@ -32,6 +32,26 @@ class plgSystemBfinsertextras extends CMSPlugin
 
 		foreach($extras as $extra)
 		{
+			if (empty($extra->status))
+			{
+				continue;
+			}
+
+			if (empty($extra->access))
+			{
+				continue;
+			}
+
+			if (!isset($userAccessLevels))
+			{
+				$userAccessLevels = JAccess::getAuthorisedViewLevels(Factory::getUser()->id);
+			}
+
+			if (empty(array_intersect($extra->access, $userAccessLevels)))
+			{
+				continue;
+			}
+
 			switch($extra->location)
 			{
 				case 'endbody':
