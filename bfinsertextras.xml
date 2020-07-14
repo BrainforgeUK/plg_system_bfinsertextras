@@ -73,6 +73,7 @@
 							   description="PLG_BFINSERTEXTRAS_EXTRACODE_DESC"
 							   hint="PLG_BFINSERTEXTRAS_EXTRACODE_HINT"
 							   class="input-xxlarge"
+							   filter="raw"
 						/>
 					</form>
 				</field>
